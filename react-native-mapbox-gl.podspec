@@ -2,11 +2,6 @@ require 'json'
 
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-default_ios_mapbox_version = '~> 6.2.1'
-rnmbgl_ios_version = '~> 6.2.1'
-  puts "REACT_NATIVE_MAPBOX_MAPBOX_IOS_VERSION env is deprecated please use `$ReactNativeMapboxGLIOSVersion = \"#{rnmbgl_ios_version}\"`"
-end
-
 Pod::Spec.new do |s|
   s.name		= "react-native-mapbox-gl"
   s.summary		= "React Native Component for Mapbox GL"
@@ -17,7 +12,7 @@ Pod::Spec.new do |s|
   s.license     	= "MIT"
   s.platform    	= :ios, "8.0"
 
-  s.dependency 'Mapbox-iOS-SDK', rnmbgl_ios_version
+  s.dependency 'Mapbox-iOS-SDK', '~> 6.2.1'
   s.dependency 'React-Core'
   s.dependency 'React'
 
